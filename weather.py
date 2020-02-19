@@ -16,10 +16,11 @@ def main():
 
         for forecast in forecast_items:
             timestamp = forecast['dt']
+            wind = forecast['wind']['speed']
             date = datetime.fromtimestamp(timestamp) #Get date and time in local time so user knows in real time
             weather_description = forecast['weather'][0]['description'] #Get forecast
             temp = forecast['main']['temp'] #Get temp
-            print(f'at {date} forecast is {weather_description} {temp}F') #Print formatted string
+            print(f'at {date} forecast is {weather_description} {temp}F winds at {wind}MPH') #Print formatted string
     except:
         print('Enter a valid city and country code.')
 
