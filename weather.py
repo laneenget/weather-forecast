@@ -16,7 +16,7 @@ def main():
 
         for forecast in forecast_items:
             timestamp = forecast['dt']
-            date = datetime.fromtimestamp(timestamp) #Get date and time in UTC to make code more universally usable
+            date = datetime.fromtimestamp(timestamp) #Get date and time in local time so user knows in real time
             weather_description = forecast['weather'][0]['description'] #Get forecast
             temp = forecast['main']['temp'] #Get temp
             print(f'at {date} forecast is {weather_description} {temp}F') #Print formatted string
